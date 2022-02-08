@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "ts-node-dev --transpile-only --ignore-watch node_modules --respawn src/server.ts",
     "dev:debug": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules --respawn src/server.ts",
-    "build": "tsc"
+    "start": "node dist/server.js",
+    "build": "tsc",
+    "postinstall": "yarn prisma migrate dev && yarn build"
   },
   "dependencies": {
     "@prisma/client": "^3.9.1",
